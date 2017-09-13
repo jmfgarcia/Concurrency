@@ -1,15 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Concurrency.AsyncBasics;
+using Nito.AsyncEx;
 
 namespace Concurrency
 {
     class Program
     {
-        static void Main(string[] args)
+        static int Main(string[] args)
         {
+            try
+            {
+                return AsyncContext.Run(() => PausingForAPeriodOfTime.DelayResult(result: 2, delay: TimeSpan.FromSeconds(value: 3)));
+            }
+            catch (Exception ex)
+            {
+                Console.Error.WriteLine(ex);
+                return -1;
+            }
         }
     }
 }
