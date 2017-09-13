@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Concurrency.Async_Basics
+namespace Concurrency.AsyncBasics
 {
     /// <summary>
     /// You need to implement a synchronous method with an asynchronous signature.

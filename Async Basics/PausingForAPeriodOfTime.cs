@@ -37,7 +37,7 @@ namespace Concurrency.AsyncBasics
         /// </summary>
         /// <param name="uri"></param>
         /// <returns></returns>
-        static async Task<string> DownloadStringWithRetries(string uri)
+        public static async Task<string> DownloadStringWithRetries(string uri)
         {
             using (var client = new HttpClient())
             {
@@ -49,7 +49,7 @@ namespace Concurrency.AsyncBasics
                     {
                         return await client.GetStringAsync(uri);
                     }
-                    catch
+                    catch (Exception ex)
                     {
                     }
                     await Task.Delay(nextDelay);

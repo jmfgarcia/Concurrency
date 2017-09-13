@@ -11,7 +11,9 @@ namespace Concurrency
         {
             try
             {
-                return AsyncContext.Run(() => PausingForAPeriodOfTime.DelayResult(result: 2, delay: TimeSpan.FromSeconds(value: 3)));
+                //return AsyncContext.Run(() => PausingForAPeriodOfTime.DelayResult(result: 2, delay: TimeSpan.FromSeconds(value: 3)));
+                var result = AsyncContext.Run(() => PausingForAPeriodOfTime.DownloadStringWithRetries(uri: new Uri(uriString: "http://www.marca.com").ToString()));
+                return 0;
             }
             catch (Exception ex)
             {

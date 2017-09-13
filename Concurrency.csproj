@@ -57,6 +57,7 @@
   <ItemGroup>
     <Compile Include="Async Basics\PausingForAPeriodOfTime.cs" />
     <Compile Include="Async Basics\ReturningCompletedTasks.cs" />
+    <Compile Include="Async Basics\WaitingForASetOfTasksToComplete.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
