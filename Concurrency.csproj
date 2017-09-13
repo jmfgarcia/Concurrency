@@ -55,7 +55,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Chapter 2. Async Basics\PausingForAPeriodOfTime.cs" />
+    <Compile Include="Async Basics\PausingForAPeriodOfTime.cs" />
+    <Compile Include="Async Basics\ReturningCompletedTasks.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

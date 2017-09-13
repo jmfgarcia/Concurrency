@@ -14,12 +14,29 @@ namespace Concurrency.AsyncBasics
     /// </summary>
     public class PausingForAPeriodOfTime
     {
+        /// <summary>
+        /// This example defines a task that completes asynchronously, for use with unit testing.
+        /// When faking an asynchronous operation, it’s important to test at least synchronous
+        /// success and asynchronous success as well as asynchronous failure.
+        /// This example returns a task used for the asynchronous success case
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="result"></param>
+        /// <param name="delay"></param>
+        /// <returns></returns>
         public static async Task<T> DelayResult<T>(T result, TimeSpan delay)
         {
             await Task.Delay(delay);
             return result;
         }
 
+        /// <summary>
+        /// This next example is a simple implementation of an exponential backoff, that is, a retry
+        /// strategy where you increase the delays between retries.Exponential backoff is a best
+        /// practice when working with web services to ensure the server does not get flooded with retries.
+        /// </summary>
+        /// <param name="uri"></param>
+        /// <returns></returns>
         static async Task<string> DownloadStringWithRetries(string uri)
         {
             using (var client = new HttpClient())
